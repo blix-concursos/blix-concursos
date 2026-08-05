@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLIX Concursos — Apostila Completa PMSC (Soldado)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --navy:#0b132b; --navy-deep:#070f22; --gold:#c5a059; --gold-light:#d4b97a; --gold-pale:#f7f2e6; --cream:#f8f6f0; --ink:#181818; --slate:#6a6f7c; --border:#ebe8db; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--cream); line-height:1.55; -webkit-font-smoothing:antialiased; }
+    header { position:sticky; top:0; z-index:100; background:rgba(11,19,43,0.94); backdrop-filter:saturate(140%) blur(16px); border-bottom:1px solid rgba(197,160,89,0.12); }
+    .nav-inner { max-width:1100px; margin:0 auto; padding:1rem 1.5rem; display:flex; align-items:center; justify-content:space-between; }
+    .logo { display:flex; align-items:center; gap:.75rem; text-decoration:none; }
+    .logo img { height:42px; width:auto; filter:drop-shadow(0 1px 3px rgba(197,160,89,0.3)); }
+    .logo strong { color:#fff; font-family:'Inter',system-ui,sans-serif; font-size:1.35rem; letter-spacing:.02em; line-height:1; }
+    .logo span { color:var(--gold); font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; display:block; margin-top:.1rem; }
+    .nav-links { display:flex; gap:1.25rem; align-items:center; }
+    .nav-links a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:.85rem; font-weight:500; transition:color .2s; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-cta { background:var(--gold); color:var(--navy); padding:.55rem 1.1rem; border-radius:999px; text-decoration:none; font-weight:700; font-size:.85rem; transition:background .2s,transform .15s; box-shadow:0 6px 20px rgba(197,160,89,0.25); }
+    .nav-cta:hover { background:var(--gold-light); transform:translateY(-2px); }
+
+    /* Hero */
+    .hero { position:relative; overflow:hidden; background:linear-gradient(160deg,var(--navy-deep) 0%,#0f1e3d 65%,#14284f 100%); color:#fff; }
+    .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 80% 20%,rgba(197,160,89,0.12) 0%,transparent 60%); pointer-events:none; }
+    .hero-inner { max-width:1100px; margin:0 auto; padding:5rem 1.5rem 6rem; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; position:relative; }
+    .hero-text h1 { font-family:'Inter',system-ui,sans-serif; font-size:clamp(2.2rem,5vw,3.2rem); line-height:1.1; font-weight:700; letter-spacing:-.02em; }
+    .hero-text h1 em { font-style:italic; color:var(--gold-light); }
+    .hero-text .subtitle { margin-top:.6rem; display:inline-block; background:rgba(197,160,89,0.15); border:1px solid rgba(197,160,89,0.25); color:var(--gold-light); padding:.35rem .9rem; border-radius:999px; font-size:.85rem; font-weight:600; letter-spacing:.03em; }
+    .hero-text p { margin-top:1.25rem; font-size:1.05rem; color:rgba(255,255,255,0.82); line-height:1.65; max-width:480px; }
+    .hero-buttons { margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap; }
+    .btn-primary { background:var(--gold); color:var(--navy); padding:.9rem 2rem; border-radius:999px; text-decoration:none; font-weight:700; letter-spacing:.02em; box-shadow:0 10px 30px rgba(197,160,89,0.3); transition:background .2s,transform .15s; display:inline-block; }
+    .btn-primary:hover { background:var(--gold-light); transform:translateY(-2px); }
+    .btn-secondary { background:rgba(255,255,255,0.06); color:#fff; border:1px solid rgba(255,255,255,0.15); padding:.9rem 2rem; border-radius:999px; text-decoration:none; font-weight:600; transition:background .2s; display:inline-block; }
+    .btn-secondary:hover { background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.3); }
+    .hero-visual { position:relative; display:flex; justify-content:center; align-items:center; }
+    .hero-visual img { width:min(380px,100%); border-radius:1rem; box-shadow:0 30px 70px rgba(0,0,0,0.45),0 0 0 1px rgba(197,160,89,0.15); transform:rotate(-1deg); transition:transform .3s; }
+    .hero-visual:hover img { transform:rotate(0deg) scale(1.02); }
+    .badge { position:absolute; top:-12px; right:-12px; background:var(--gold); color:var(--navy); padding:.35rem .9rem; border-radius:999px; font-weight:800; font-size:.8rem; letter-spacing:.05em; box-shadow:0 6px 20px rgba(197,160,89,0.35); }
+
+    /* Sections */
+    .section { max-width:1100px; margin:0 auto; padding:5rem 1.5rem; }
+    .section-header { text-align:center; max-width:720px; margin:0 auto 3rem; }
+    .section-header h2 { font-family:'Inter',system-ui,sans-serif; font-size:clamp(1.8rem,4vw,2.4rem); font-weight:700; color:var(--navy); letter-spacing:-.02em; line-height:1.15; }
+    .section-header h2 em { font-style:italic; color:var(--gold); }
+    .section-header p { margin-top:1rem; color:var(--slate); font-size:1.05rem; }
+
+    /* Features list */
+    .feature-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem; }
+    .feature-item { background:#fff; border:1px solid var(--border); border-radius:1rem; padding:1.25rem 1.5rem; display:flex; gap:.75rem; align-items:flex-start; transition:box-shadow .2s; }
+    .feature-item:hover { box-shadow:0 12px 30px rgba(11,19,43,0.06); }
+    .feature-item .dot { width:10px; height:10px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:.35rem; }
+    .feature-item h4 { font-family:'Inter',system-ui,sans-serif; font-size:1.05rem; color:var(--navy); margin-bottom:.25rem; }
+    .feature-item p { color:var(--slate); font-size:.9rem; line-height:1.45; }
+
+    /* Product focus */
+    .product-focus { background:#fff; border:1px solid var(--border); border-radius:2rem; padding:2.5rem; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; box-shadow:0 24px 60px rgba(11,19,43,0.05); }
+    @media(max-width:900px){ .product-focus{ grid-template-columns:1fr; } }
+    .product-focus img { width:100%; border-radius:1rem; box-shadow:0 20px 50px rgba(11,19,43,0.15); }
+    .product-focus h2 { font-family:'Inter',system-ui,sans-serif; font-size:2rem; color:var(--navy); line-height:1.15; }
+    .product-focus h2 em { font-style:italic; color:var(--gold); }
+    .product-focus .meta { margin-top:.75rem; color:var(--slate); font-size:.95rem; }
+    .product-focus .desc { margin-top:1.25rem; color:var(--ink); font-size:1rem; line-height:1.7; }
+    .product-focus ul { margin-top:1.25rem; list-style:none; }
+    .product-focus ul li { padding:.35rem 0; color:var(--ink); font-size:.95rem; position:relative; padding-left:1.25rem; }
+    .product-focus ul li::before { content:'✓'; position:absolute; left:0; top:.35rem; color:var(--gold); font-weight:800; }
+    .price-big { font-family:'Inter',system-ui,sans-serif; font-size:2.6rem; color:var(--navy); letter-spacing:-.03em; margin-top:1.25rem; }
+    .price-big span { font-family:'Inter',sans-serif; font-size:1rem; color:var(--slate); text-decoration:line-through; margin-left:.4rem; font-weight:400; }
+    .btn-block { display:inline-block; margin-top:1rem; background:var(--navy); color:#fff; padding:1rem 2.5rem; border-radius:999px; text-decoration:none; font-weight:700; font-size:1.05rem; transition:background .2s,transform .15s; box-shadow:0 10px 25px rgba(11,19,43,0.15); }
+    .btn-block:hover { background:var(--gold); color:var(--navy); transform:translateY(-2px); }
+    .secure-note { margin-top:.75rem; font-size:.85rem; color:var(--slate); }
+
+    /* Steps */
+    .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem; }
+    .step { text-align:center; background:#fff; border:1px solid var(--border); border-radius:1.25rem; padding:2rem; }
+    .step-number { width:52px; height:52px; border-radius:50%; background:linear-gradient(135deg,var(--navy),#14284f); color:var(--gold); font-family:'Inter',system-ui,sans-serif; font-size:1.3rem; font-weight:700; display:inline-grid; place-items:center; margin-bottom:1rem; box-shadow:0 6px 18px rgba(11,19,43,0.15); }
+    .step h4 { font-family:'Inter',system-ui,sans-serif; font-size:1.1rem; margin-bottom:.35rem; color:var(--navy); }
+    .step p { color:var(--slate); font-size:.95rem; }
+
+    /* CTA */
+    .cta-banner { background:linear-gradient(135deg,var(--navy-deep),#0f1e3d); color:#fff; border-radius:2rem; padding:3.5rem 2rem; text-align:center; position:relative; overflow:hidden; margin-top:2rem; }
+    .cta-banner::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 20% 30%,rgba(197,160,89,0.15) 0%,transparent 60%); }
+    .cta-banner h2 { font-family:'Inter',system-ui,sans-serif; font-size:clamp(1.6rem,3.5vw,2.2rem); position:relative; z-index:1; }
+    .cta-banner p { margin-top:.75rem; color:rgba(255,255,255,0.85); max-width:540px; margin-left:auto; margin-right:auto; position:relative; z-index:1; }
+    .cta-banner .btn-primary { margin-top:2rem; position:relative; z-index:1; }
+
+    /* Footer */
+    footer { background:var(--navy); color:rgba(255,255,255,0.7); padding:3rem 1.5rem 2rem; border-top:1px solid rgba(197,160,89,0.12); }
+    .footer-inner { max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between; align-items:flex-start; }
+    footer .brand img { height:36px; width:auto; filter:drop-shadow(0 1px 3px rgba(197,160,89,0.3)); margin-bottom:.5rem; }
+    footer .brand p { font-size:.9rem; color:rgba(255,255,255,0.6); max-width:320px; }
+    .contact a { color:rgba(255,255,255,0.85); text-decoration:none; display:block; margin:.15rem 0; font-size:.9rem; transition:color .2s; }
+    .contact a:hover { color:var(--gold); }
+    .copyright { max-width:1100px; margin:2rem auto 0; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.08); font-size:.85rem; color:rgba(255,255,255,0.45); text-align:center; }
+
+    /* Modal */
+    .modal-overlay { position:fixed; inset:0; background:rgba(11,19,43,0.65); backdrop-filter:saturate(120%) blur(10px); z-index:200; display:flex; align-items:center; justify-content:center; padding:1rem; opacity:0; pointer-events:none; transition:opacity .25s; }
+    .modal-overlay.open { opacity:1; pointer-events:all; }
+    .modal { background:#fff; border-radius:1.5rem; max-width:520px; width:100%; padding:2rem 2.25rem; box-shadow:0 30px 80px rgba(11,19,43,0.35); transform:translateY(10px); transition:transform .25s; position:relative; }
+    .modal-overlay.open .modal { transform:translateY(0); }
+    .modal h3 { font-family:'Inter',system-ui,sans-serif; font-size:1.4rem; color:var(--navy); margin-bottom:.25rem; }
+    .modal .sub { color:var(--slate); font-size:.9rem; margin-bottom:1.25rem; }
+    .form-group { margin-bottom:1rem; }
+    .form-group label { display:block; font-size:.8rem; font-weight:600; color:var(--navy); margin-bottom:.3rem; letter-spacing:.01em; }
+    .form-group input, .form-group textarea { width:100%; padding:.75rem .95rem; border:1.5px solid var(--border); border-radius:.7rem; font-family:inherit; font-size:.95rem; color:var(--ink); background:#fff; transition:border-color .2s,box-shadow .2s; }
+    .form-group input:focus, .form-group textarea:focus { outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(197,160,89,0.12); }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; }
+    .modal .btn-send { width:100%; background:var(--navy); color:#fff; border:none; padding:.9rem; border-radius:999px; font-weight:700; font-size:1rem; cursor:pointer; margin-top:.25rem; transition:background .2s,transform .15s; box-shadow:0 10px 25px rgba(11,19,43,0.2); }
+    .modal .btn-send:hover { background:var(--gold); color:var(--navy); transform:translateY(-2px); }
+    .close-btn { position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.4rem; color:var(--slate); cursor:pointer; line-height:1; }
+    .close-btn:hover { color:var(--navy); }
+
+    @media(max-width:980px){ .hero-inner{ grid-template-columns:1fr; text-align:center; } .hero-text p{ margin-left:auto; margin-right:auto; } .hero-buttons{ justify-content:center; } .hero-visual{ order:-1; } .hero-visual img{ width:280px; } }
+    @media(max-width:720px){ .nav-links .nav-cta{ display:none; } .footer-inner{ flex-direction:column; gap:1.5rem; } .section{ padding:4rem 1.25rem; } .product-focus{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#" class="logo" aria-label="BLIX Concursos">
+      <img src="/home/user/LOGO.png" alt="BLIX Concursos" />
+      <div><strong>BLIX</strong><span>Concursos</span></div>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#produto">Apostila</a>
+      <a href="#conteudo">Conteúdo</a>
+      <a href="#como">Como Funciona</a>
+      <a class="nav-cta" href="#comprar">Quero Comprar</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" aria-label="Apresentação">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Apostila <em>Completa</em> para o Concurso PMSC.</h1>
+      <div class="subtitle">POLÍCIA MILITAR DE SANTA CATARINA • CURSO DE FORMAÇÃO DE PRAÇAS</div>
+      <p>Material de estudo elaborado com base na legislação vigente (ago/2026) e no estilo da banca AOCP. Teoria completa, mnemônicos, macetes, lei seca, jurisprudência e questões 100% comentadas alternativa por alternativa.</p>
+      <div class="hero-buttons">
+        <a class="btn-primary" href="#comprar">Quero Comprar — Pelo WhatsApp</a>
+        <a class="btn-secondary" href="#conteudo">Ver Conteúdo</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="/home/user/apostila-pmsc-capa.jpg" alt="Apostila Completa PMSC — Capa" />
+      <span class="badge">PDF ATUALIZADO • À VENDA</span>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="section" id="produto" aria-label="Produto">
+    <div class="product-focus">
+      <img src="/home/user/apostila-pmsc-capa.jpg" alt="Capa da Apostila Completa PMSC" />
+      <div>
+        <h2>Apostila Completa <em>Concurso PMSC — Soldado</em></h2>
+        <div class="meta">PDF • Teoria completa e aprofundada • Atualização Agosto 2026</div>
+        <p class="desc">Esta apostila reúne todo o conteúdo necessário para o Curso de Formação de Praças (Soldado) da Polícia Militar de Santa Catarina. Organizada por matérias, com foco na banca AOCP, ela oferece uma preparação completa e direta — sem textos desnecessários, apenas o que realmente importa para a prova.</p>
+        <ul>
+          <li>Direito Constitucional — princípios, direitos, organização do Estado, segurança pública</li>
+          <li>Direito Penal — parte geral, infração penal, concurso de crimes, penas</li>
+          <li>Processo Penal — investigação, ação penal, medidas cautelares</li>
+          <li>Direito Penal Militar — crimes militares, justiça militar, sanções disciplinares</li>
+          <li>Legislação Penal Especial — crimes contra a pessoa, patrimônio, administração</li>
+          <li>Língua Portuguesa — interpretação, gramática, redação, questões objetivas</li>
+          <li>Informática — conceitos, sistemas operacionais, internet, segurança da informação</li>
+          <li>Legislação de Trânsito (CTB) — normas de trânsito, infrações, penalidades</li>
+          <li>Legislação Institucional PMSC — Estatuto, Regulamento, direitos e deveres do militar</li>
+        </ul>
+        <p style="margin-top:1rem; color:var(--slate); font-size:.9rem;">Além da teoria, o material inclui mnemônicos, macetes, lei seca, jurisprudência recente e questões de provas anteriores 100% comentadas alternativa por alternativa.</p>
+        <div class="price-big">R$ 47,90 <span>R$ 79,90</span></div>
+        <a class="btn-block" href="#comprar" id="comprar">Confirmar Pedido pelo WhatsApp</a>
+        <p class="secure-note">✓ Sem burocracia • ✓ Envios imediatos • ✓ Pagamento por Pix ou transferência</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="conteudo" aria-label="Conteúdo detalhado">
+    <div class="section-header">
+      <h2>O que está <em>dentro</em></h2>
+      <p>Cada matéria é organizada para facilitar a memorização e a aplicação direta na prova objetiva.</p>
+    </div>
+    <div class="feature-list">
+      <article class="feature-item"><div class="dot"></div><div><h4>Direito Constitucional</h4><p>Teoria da Constituição, princípios fundamentais, direitos e garantias fundamentais, organização do Estado, administração pública, segurança pública e militares.</p></div></article>
+      <article class="feature-item"><div class="dot"></div><div><h4>Direito Penal</h4><p>Fontes do direito penal, interpretação, aplicação da lei penal, infração penal, concurso de crimes, penas, medidas de segurança.</p></div></article>
+      <article class="feature-item"><div class="dot"></div><div><h4>Processo Penal</h4><p>Investigação criminal, ação penal, medidas cautelares, provas, execução penal.</p></div></article>
+      <article class="feature-item"><div class="dot"></div><div><h4>Direito Penal Militar</h4><p>Crimes militares, justiça militar, sanções disciplinares, legislação específica.</p></div></article>
+      <article class="feature-item"><div class="dot"></div><div><h4>Língua Portuguesa</h4><p>Interpretação de textos, gramática, ortografia, coesão e coerência, questões objetivas.</p></div></article>
+      <article class="feature-item"><div class="dot"></div><div><h4>Legislação de Trânsito (CTB)</h4><p>Normas de trânsito, infrações, penalidades, crimes de trânsito, procedimentos administrativos.</p></div></article>
+      <article class="feature-item"><div class="dot"></div><div><h4>Informática</h4><p>Conceitos básicos, sistemas operacionais, internet, segurança da informação, ferramentas digitais.</p></div></article>
+      <article class="feature-item"><div class="dot"></div><div><h4>Legislação Institucional PMSC</h4><p>Estatuto da Polícia Militar, regulamentos internos, direitos e deveres do militar estadual.</p></div></article>
+    </div>
+  </section>
+
+  <section class="section" id="como" aria-label="Como funciona">
+    <div class="section-header">
+      <h2>Como <em>funciona</em></h2>
+      <p>Três passos simples para você começar a estudar ainda hoje.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>Escolha a apostila</h4>
+        <p>Veja se o conteúdo faz sentido para o seu edital e clique em “Confirmar Pedido”.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>Confirme pelo WhatsApp</h4>
+        <p>O site monta a mensagem com todos os dados para você enviar direto ao vendedor.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>Receba o PDF</h4>
+        <p>Após a confirmação, você recebe o link de download direto no WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Contato">
+    <div class="cta-banner">
+      <h2>Quer começar agora?</h2>
+      <p>Confirmar o pedido é rápido. Você recebe o link do PDF no WhatsApp e pode estudar imediatamente.</p>
+      <a class="btn-primary" href="#comprar" onclick="openModal()">Quero Comprar — Pelo WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="brand">
+      <img src="/home/user/LOGO.png" alt="BLIX Concursos" />
+      <p>Material de estudo de alta qualidade para concursos públicos. Produzido com base na legislação vigente e no perfil das bancas organizadoras.</p>
+    </div>
+    <div class="contact">
+      <strong style="color:#fff;font-family:'Inter',system-ui,sans-serif;font-size:1.1rem;">Contato</strong>
+      <a href="https://wa.me/49988977989" target="_blank" rel="noopener">WhatsApp: (49) 98897-7989</a>
+      <a href="mailto:contato@blixconcursos.com">contato@blixconcursos.com</a>
+    </div>
+    <div class="contact">
+      <strong style="color:#fff;font-family:'Inter',system-ui,sans-serif;font-size:1.1rem;">Links</strong>
+      <a href="#produto">Apostila</a>
+      <a href="#conteudo">Conteúdo</a>
+      <a href="#como">Como Funciona</a>
+    </div>
+  </div>
+  <div class="copyright">© BLIX Concursos. Todos os direitos reservados. Site feito para vender apostilas digitais.</div>
+</footer>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-label="Confirmação de pedido" onclick="if(event.target===this) closeModal()">
+  <div class="modal" role="document">
+    <button class="close-btn" onclick="closeModal()" aria-label="Fechar">×</button>
+    <h3>Confirmar pedido</h3>
+    <p class="sub">Apostila Completa — Concurso PMSC (Soldado) — R$ 47,90</p>
+    <form onsubmit="submitOrder(event)" novalidate>
+      <div class="form-group"><label for="nome">Nome completo</label><input id="nome" name="nome" type="text" placeholder="Seu nome" required /></div>
+      <div class="form-row">
+        <div class="form-group"><label for="email">E-mail</label><input id="email" name="email" type="email" placeholder="seu@email.com" required /></div>
+        <div class="form-group"><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" placeholder="(49) 99999-9999" required /></div>
+      </div>
+      <div class="form-group"><label for="obs">Observação (opcional)</label><textarea id="obs" name="obs" rows="2" placeholder="Se quiser algo específico..."></textarea></div>
+      <button type="submit" class="btn-send">Enviar pedido pelo WhatsApp</button>
+      <p style="margin-top:.75rem;font-size:.8rem;color:var(--slate);">Você será redirecionado para enviar a mensagem diretamente ao vendedor.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+  function openModal() { document.getElementById('modal').classList.add('open'); document.body.style.overflow='hidden'; setTimeout(()=>document.getElementById('nome').focus(),50); }
+  function closeModal() { document.getElementById('modal').classList.remove('open'); document.body.style.overflow=''; }
+  function submitOrder(e) {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const whatsapp = document.getElementById('whatsapp').value.trim();
+    const obs = document.getElementById('obs').value.trim();
+    if (!nome || !email || !whatsapp) { alert('Preencha pelo menos nome, e-mail e WhatsApp.'); return; }
+    const msg = 'Ola! Meu nome e ' + nome + '. Quero confirmar o pedido da apostila: Apostila Completa - Concurso PMSC (Soldado) - R$ 47,90. Contato: ' + email + ' | WhatsApp: ' + whatsapp + (obs ? ' Observacao: ' + obs : '') + ' Aguardo confirmacao para pagamento e envio do PDF.';
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(msg).catch(function(){}); }
+    const url = 'https://wa.me/49988977989?text=' + encodeURIComponent(msg);
+    const opened = window.open(url, '_blank');
+    const form = document.getElementById('modal').querySelector('form');
+    form.innerHTML = '<div style="text-align:center;padding:1.5rem 0;"><h3 style="font-family:Inter,sans-serif;color:#0b132b;font-size:1.3rem;margin-bottom:.5rem;">Pedido registrado!</h3><p style="color:#6a6f7c;font-size:.95rem;">A mensagem foi copiada e o WhatsApp abriu. Se não abriu, clique no link abaixo.</p><p style="margin-top:1rem;font-size:.9rem;color:#333;background:#f7f2e6;padding:.75rem;border-radius:.75rem;border:1px solid #ebe8db;word-break:break-word;">'+msg.replace(/</g,'&lt;')+'</p><a href="'+url+'" target="_blank" style="display:inline-block;margin-top:1rem;background:#c5a059;color:#0b132b;padding:.7rem 1.8rem;border-radius:999px;text-decoration:none;font-weight:700;">Enviar mensagem ao vendedor pelo WhatsApp</a></div>';
+    try { fetch('https://hooks.zapier.com/hooks/catch/123456/abcdef/', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({nome,email,whatsapp,obs,mensagem:msg}) }).catch(function(){}); } catch(e){}
+  }
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+</script>
+
+</body>
+</html>
