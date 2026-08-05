@@ -130,7 +130,7 @@
       <a href="#produto">Apostila</a>
       <a href="#conteudo">Conteúdo</a>
       <a href="#como">Como Funciona</a>
-      <a class="nav-cta" href="#comprar">Quero Comprar</a>
+      <a class="nav-cta" href="#" onclick="openModal(); return false;">Quero Comprar</a>
     </nav>
   </div>
 </header>
@@ -142,7 +142,7 @@
       <div class="subtitle">POLÍCIA MILITAR DE SANTA CATARINA • CURSO DE FORMAÇÃO DE PRAÇAS</div>
       <p>Material de estudo elaborado com base na legislação vigente (ago/2026) e no estilo da banca AOCP. Teoria completa, mnemônicos, macetes, lei seca, jurisprudência e questões 100% comentadas alternativa por alternativa.</p>
       <div class="hero-buttons">
-        <a class="btn-primary" href="#comprar">Quero Comprar — Pelo WhatsApp</a>
+        <a class="btn-primary" href="#" onclick="openModal(); return false;">Quero Comprar — Pelo WhatsApp</a>
         <a class="btn-secondary" href="#conteudo">Ver Conteúdo</a>
       </div>
     </div>
@@ -174,7 +174,7 @@
         </ul>
         <p style="margin-top:1rem; color:var(--slate); font-size:.9rem;">Além da teoria, o material inclui mnemônicos, macetes, lei seca, jurisprudência recente e questões de provas anteriores 100% comentadas alternativa por alternativa.</p>
         <div class="price-big">R$ 47,90 <span>R$ 79,90</span></div>
-        <a class="btn-block" href="#comprar" id="comprar">Confirmar Pedido pelo WhatsApp</a>
+        <a class="btn-block" href="#" onclick="openModal(); return false;" id="comprar">Confirmar Pedido pelo WhatsApp</a>
         <p class="secure-note">✓ Sem burocracia • ✓ Envios imediatos • ✓ Pagamento por Pix ou transferência</p>
       </div>
     </div>
@@ -225,7 +225,7 @@
     <div class="cta-banner">
       <h2>Quer começar agora?</h2>
       <p>Confirmar o pedido é rápido. Você recebe o link do PDF no WhatsApp e pode estudar imediatamente.</p>
-      <a class="btn-primary" href="#comprar" onclick="openModal()">Quero Comprar — Pelo WhatsApp</a>
+      <a class="btn-primary" href="#" onclick="openModal(); return false;">Quero Comprar — Pelo WhatsApp</a>
     </div>
   </section>
 </main>
@@ -239,7 +239,6 @@
     <div class="contact">
       <strong style="color:#fff;font-family:'Inter',system-ui,sans-serif;font-size:1.1rem;">Contato</strong>
       <a href="https://wa.me/49988977989" target="_blank" rel="noopener">WhatsApp: (49) 98897-7989</a>
-      <a href="mailto:contato@blixconcursos.com">contato@blixconcursos.com</a>
     </div>
     <div class="contact">
       <strong style="color:#fff;font-family:'Inter',system-ui,sans-serif;font-size:1.1rem;">Links</strong>
@@ -280,12 +279,12 @@
     const whatsapp = document.getElementById('whatsapp').value.trim();
     const obs = document.getElementById('obs').value.trim();
     if (!nome || !email || !whatsapp) { alert('Preencha pelo menos nome, e-mail e WhatsApp.'); return; }
-    const msg = 'Ola! Meu nome e ' + nome + '. Quero confirmar o pedido da apostila: Apostila Completa - Concurso PMSC (Soldado) - R$ 47,90. Contato: ' + email + ' | WhatsApp: ' + whatsapp + (obs ? ' Observacao: ' + obs : '') + ' Aguardo confirmacao para pagamento e envio do PDF.';
+    const msg = 'Olá! Meu nome é ' + nome + '. Quero confirmar o pedido da apostila:\n\n📘 Apostila Completa — Concurso PMSC (Soldado)\n💰 R$ 47,90\n📄 PDF • Atualização ago/2026\n\nContato: WhatsApp ' + whatsapp + (obs ? '\nObservação: ' + obs : '') + '\n\nAguardo confirmação para finalizar o pagamento e receber o PDF.';
     if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(msg).catch(function(){}); }
     const url = 'https://wa.me/49988977989?text=' + encodeURIComponent(msg);
     const opened = window.open(url, '_blank');
     const form = document.getElementById('modal').querySelector('form');
-    form.innerHTML = '<div style="text-align:center;padding:1.5rem 0;"><h3 style="font-family:Inter,sans-serif;color:#0b132b;font-size:1.3rem;margin-bottom:.5rem;">Pedido registrado!</h3><p style="color:#6a6f7c;font-size:.95rem;">A mensagem foi copiada e o WhatsApp abriu. Se não abriu, clique no link abaixo.</p><p style="margin-top:1rem;font-size:.9rem;color:#333;background:#f7f2e6;padding:.75rem;border-radius:.75rem;border:1px solid #ebe8db;word-break:break-word;">'+msg.replace(/</g,'&lt;')+'</p><a href="'+url+'" target="_blank" style="display:inline-block;margin-top:1rem;background:#c5a059;color:#0b132b;padding:.7rem 1.8rem;border-radius:999px;text-decoration:none;font-weight:700;">Enviar mensagem ao vendedor pelo WhatsApp</a></div>';
+    form.innerHTML = '<div style="text-align:center;padding:1.5rem 0;"><h3 style="font-family:Inter,sans-serif;color:#0b132b;font-size:1.3rem;margin-bottom:.5rem;">Pedido registrado!</h3><p style="color:#6a6f7c;font-size:.95rem;">Mensagem copiada e WhatsApp aberto. Se não abriu, clique no link abaixo.</p><div style="margin-top:1rem;background:#f7f2e6;padding:1rem;border-radius:.75rem;border:1px solid #ebe8db;text-align:left;font-size:.9rem;color:#333;line-height:1.6;word-break:break-word;"><strong>Olá! Meu nome é ' + nome + '</strong><br>Quero confirmar o pedido:<br><br>📘 Apostila Completa — Concurso PMSC (Soldado)<br>💰 R$ 47,90<br>📄 PDF • Atualização ago/2026<br><br>Contato: WhatsApp ' + whatsapp + (obs ? '<br>Observação: ' + obs : '') + '<br><br>Aguardo confirmação para finalizar o pagamento e receber o PDF.</div><a href="' + url + '" target="_blank" style="display:inline-block;margin-top:1rem;background:#c5a059;color:#0b132b;padding:.7rem 1.8rem;border-radius:999px;text-decoration:none;font-weight:700;">Enviar mensagem ao vendedor pelo WhatsApp</a></div>';
     try { fetch('https://hooks.zapier.com/hooks/catch/123456/abcdef/', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({nome,email,whatsapp,obs,mensagem:msg}) }).catch(function(){}); } catch(e){}
   }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
